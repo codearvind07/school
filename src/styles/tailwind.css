@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Global Text Colors */
+    --text-primary: #000000;
+    --text-secondary: #030000;
+    --text-accent: #106d63;
+    --text-dark: #1e1e1e;
+    --text-light: #ffffff;
+
+    /* Global Background Colors */
+    --bg-primary: #007f5f7f;
+    --bg-secondary: #106d63;
+    --bg-tertiary: #166c5f;
+    --bg-accent: #385c8e7f;
+    --bg-warning: #f4b033;
+    --bg-warning-alt: #f6a532;
+    --bg-highlight: #fca519;
+    --bg-light: #fefefe;
+    --bg-white: #ffffff;
+
+    /* Global Border Colors */
+    --border-primary: #106d63;
+    --border-light: #d9d9d9;
+
+    /* Typography Variables */
+    --font-size-xs: 15px;
+    --font-size-sm: 16px;
+    --font-size-md: 18px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 34px;
+    --font-size-4xl: 36px;
+    --font-size-5xl: 42px;
+    --font-size-6xl: 54px;
+
+    /* Font Weight Variables */
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    /* Line Height Variables */
+    --line-height-xs: 18px;
+    --line-height-sm: 19px;
+    --line-height-md: 20px;
+    --line-height-lg: 24px;
+    --line-height-xl: 27px;
+    --line-height-2xl: 29px;
+    --line-height-3xl: 30px;
+    --line-height-4xl: 40px;
+    --line-height-5xl: 46px;
+    --line-height-6xl: 49px;
+    --line-height-7xl: 63px;
+
+    /* Spacing Variables */
+    --spacing-xs: 4px;
+    --spacing-sm: 6px;
+    --spacing-md: 8px;
+    --spacing-lg: 10px;
+    --spacing-xl: 12px;
+    --spacing-2xl: 14px;
+    --spacing-3xl: 16px;
+    --spacing-4xl: 18px;
+    --spacing-5xl: 20px;
+    --spacing-6xl: 22px;
+    --spacing-7xl: 24px;
+    --spacing-8xl: 26px;
+    --spacing-9xl: 28px;
+    --spacing-10xl: 30px;
+
+    /* Border Radius Variables */
+    --radius-xs: 12px;
+    --radius-sm: 22px;
+    --radius-md: 30px;
+    --radius-lg: 38px;
+    --radius-xl: 40px;
+    --radius-2xl: 42px;
+    --radius-full: 106px;
+
+    /* Component-specific Colors */
+    --header-bg: #166c5f;
+    --button-primary-bg: #fca519;
+    --button-secondary-bg: #ffffff;
+    --button-icon-bg: #106d63;
+    --footer-bg: #ffffff;
+    --footer-border: #d9d9d9;
+    --link-bg: #106d63;
+    --link-text: #1e1e1e;
+  }
+}

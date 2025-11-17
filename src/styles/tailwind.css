@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+  /* Nexa Font Faces */
+
   :root {
     /* Global Text Colors */
     --text-primary: #000000;

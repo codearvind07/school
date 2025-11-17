@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/index.css';
+import { nexa } from './fonts';
 
 export const viewport = {
   width: 'device-width',
@@ -30,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}
+    <html lang="en" className={`${nexa.variable} font-sans`}>
+      <body >{children}
 
         <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fedubright9442back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9" />
         <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1" /></body>

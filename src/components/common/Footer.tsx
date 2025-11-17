@@ -1,107 +1,75 @@
-'use client';
+"use client";
 
-import Link from '../ui/Link';
+import { MapPin, Phone, Mail, Users } from "lucide-react";
+import Link from "../ui/Link";
 
-const Footer = () => {
-  const useCasesLinks = [
-    { label: 'Admissions', href: '/admissions' },
-    { label: 'Academics', href: '/academics' },
-    { label: 'Student Life', href: '/student-life' },
-    { label: 'Athletics', href: '/athletics' },
-    { label: 'Arts', href: '/arts' },
-    { label: 'Community', href: '/community' },
-    { label: 'About Us', href: '/about-us' },
-  ]
-
-  const exploreLinks = [
-    { label: 'News', href: '/news' },
-    { label: 'Events', href: '/events' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Alumni', href: '/alumni' },
-    { label: 'Giving', href: '/giving' },
-    { label: 'Contact Us', href: '/contact-us' },
-    { label: 'School Store', href: '/store' },
-  ]
-
-  const resourcesLinks = [
-    { label: 'Parent Portal', href: '/parents' },
-    { label: 'Student Portal', href: '/students' },
-    { label: 'Faculty & Staff', href: '/faculty' },
-    { label: 'Calendar', href: '/calendar' },
-    { label: 'Library', href: '/library' },
-    { label: 'Lunch Menu', href: '/lunch-menu' },
-    { label: 'School Directory', href: '/directory' },
-  ]
-
+export default function Footer() {
   return (
-    <footer className="w-full bg-footer-background border-t border-footer-border mt-[48px] md:mt-[96px] mr-[30px] md:mr-[60px]">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-[16px] md:py-[32px]">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 w-full md:w-[84%]">
-            {/* Use Cases Column */}
-            <div className="flex flex-col gap-[14px] md:gap-[28px] justify-start items-start w-full md:w-[42%]">
-              <h3 className="text-sm font-semibold leading-md text-text-dark">
-                Use cases
-              </h3>
-              <ul className="flex flex-col gap-[6px] md:gap-[12px] justify-start items-start">
-                {useCasesLinks?.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link?.href}
-                      variant="primary"
-                      className="text-sm font-normal leading-md text-text-dark hover:text-text-accent"
-                    >
-                      {link?.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <footer className="w-full bg-[#3b3b3b] text-white pt-12 pb-6 mt-20">
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-            {/* Explore Column */}
-            <div className="flex flex-col gap-[14px] md:gap-[28px] justify-start items-start w-full md:w-[42%]">
-              <h3 className="text-sm font-semibold leading-md text-text-dark">
-                Explore
-              </h3>
-              <ul className="flex flex-col gap-[6px] md:gap-[12px] justify-start items-start">
-                {exploreLinks?.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link?.href}
-                      variant="primary"
-                      className="text-sm font-normal leading-md text-text-dark hover:text-text-accent"
-                    >
-                      {link?.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources Column */}
-            <div className="flex flex-col gap-[14px] md:gap-[28px] justify-start items-start w-full md:w-auto">
-              <h3 className="text-sm font-semibold leading-md text-text-dark">
-                Resources
-              </h3>
-              <ul className="flex flex-col gap-[6px] md:gap-[12px] justify-start items-start">
-                {resourcesLinks?.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link?.href}
-                      variant="primary"
-                      className="text-sm font-normal leading-md text-text-dark hover:text-text-accent"
-                    >
-                      {link?.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* ABOUT US */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold border-b border-dotted border-gray-400 pb-2">
+              ABOUT US
+            </h3>
+            <p className="text-gray-300 text-sm leading-6 mt-4 pr-4">
+              Our school is a newly established institution dedicated to providing
+              modern education with strong values. We aim to create a joyful,
+              disciplined, and inspiring learning environment for every child.
+            </p>
           </div>
+
+          {/* PUBLIC DISCLOSURE */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold border-b border-dotted border-gray-400 pb-2">
+              PUBLIC DISCLOSURE
+            </h3>
+
+            <ul className="text-white text-sm mt-4 space-y-2">
+              <li><Link href="/documents">Mandatory Documents</Link></li>
+              <li><Link href="/information">General Information</Link></li>
+              <li><Link href="/academics">Academic Details</Link></li>
+              <li><Link href="/infrastructure">Infrastructure</Link></li>
+              <li><Link href="/staff">Staff Details</Link></li>
+            </ul>
+          </div>
+
+          {/* CONTACT US */}
+          <div>
+            <h3 className="text-orange-400 text-lg font-semibold border-b border-dotted border-gray-400 pb-2">
+              CONTACT US
+            </h3>
+
+            <div className="flex items-start gap-3 mt-5">
+              <MapPin className="text-orange-400 w-5 h-5" />
+              <p className="text-gray-300 text-sm leading-5">
+              Bauliya, Captainganj • District Kushinagar, Uttar Pradesh
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3 mt-4">
+              <Phone className="text-orange-400 w-5 h-5" />
+              <p className="text-gray-300 text-sm">+91 8173055035</p>
+            </div>
+
+            <div className="flex items-start gap-3 mt-4">
+              <Mail className="text-orange-400 w-5 h-5" />
+              <p className="text-gray-300 text-sm">info@littlewonderspublicschoolcpj.com  </p>
+            </div>
+
+          </div>
+
+         
         </div>
+      </div>
+
+      {/* BOTTOM BAR */}
+      <div className="mt-10 bg-[#b97a21] py-3 text-center text-sm text-white">
+        © Copyright {new Date().getFullYear()} Little Wonders Public School |
+        <span className="ml-1">Designed with ❤️</span>
       </div>
     </footer>
   );
 }
-
-export default Footer

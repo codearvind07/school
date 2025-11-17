@@ -1,103 +1,110 @@
-'use client';
-import { useState } from 'react';
- import Image from'next/image';
- import Button from'../ui/Button';
- import IconButton from'../ui/IconButton';
- import Link from'../ui/Link';
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Button from "../ui/Button";
+import Link from "../ui/Link";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navigationItems = [
-    { label: 'Home', href: '/' },
-    { label: 'courses', href: '/courses' },
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' },
-  ]
+    { label: "Home", href: "/" },
+    { label: "Courses", href: "/courses" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Contact", href: "/contact" },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="w-full bg-header-background">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-[16px] md:gap-[26px] justify-start items-start w-full mt-[13px] md:mt-[26px]">
-          {/* Top Social Media Bar */}
-          <div className="flex justify-start items-center w-full md:w-[32%]">
-            <div className="flex justify-end items-center w-full bg-background-warning px-[11px] md:px-[22px] py-[3px] md:py-[6px] rounded-[12px]">
-              <div className="w-[13px] md:w-[26px] h-[13px] md:h-[26px] bg-secondary-background rounded-[6px] md:rounded-[12px]"></div>
-              <div className="w-[13px] md:w-[26px] h-[13px] md:h-[26px] bg-secondary-background rounded-[6px] md:rounded-[12px] ml-[4px] md:ml-[8px]"></div>
-              <IconButton
-                src="/images/img_group_7.svg"
-                width={18}
-                height={18}
-                className="w-[13px] md:w-[26px] h-[13px] md:h-[26px] bg-secondary-background rounded-[6px] md:rounded-[12px] ml-[4px] md:ml-[8px] p-[2px] md:p-[4px]"
-                variant="ghost"
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 font-sans
+      ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+    >
+      <div className="max-w-[1500px] mx-auto px-4 lg:px-6 h-[90px] flex items-center justify-center">
+        <div className="flex items-center justify-between w-full">
+          {/* Logo for mobile */}
+          <Image
+            src="/images/logo.png"
+            alt="Little Wonders Public School"
+            width={180}
+            height={60}
+            className="object-contain transition-all duration-300 lg:hidden"
+            priority
+          />
+ 
+          {/* Combined Navigation for Desktop */}
+          <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
+            {/* Logo */}
+            <Image
+              src="/images/logo.png"
+              alt="Little Wonders Public School"
+              width={180}
+              height={60}
+              className="object-contain transition-all duration-300"
+              priority
+            />
+            {/* Nav Links */}
+            {navigationItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className="text-[14px] font-semibold text-gray-900 transition duration-200 hover:text-blue-600"
+              >
+                {item.label}
+              </Link>
+            ))}
+            {/* CTA Button */}
+            <a href="/admissions">
+              <Button
+                text="Apply Now"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow"
               />
-              <IconButton
-                src="/images/img_facebook.svg"
-                width={18}
-                height={18}
-                className="w-[13px] md:w-[26px] h-[13px] md:h-[26px] bg-secondary-background rounded-[6px] md:rounded-[12px] ml-[4px] md:ml-[8px] p-[2px] md:p-[4px]"
-                variant="ghost"
-              />
-            </div>
-          </div>
+            </a>
+          </nav>
 
-          {/* Main Navigation */}
-          <div className="flex justify-between items-center w-full">
-            {/* Mobile Menu Button */}
-            <button 
-              className="block lg:hidden p-2" 
-              aria-label="Open menu"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <div className="w-6 h-0.5 bg-text-light mb-1"></div>
-              <div className="w-6 h-0.5 bg-text-light mb-1"></div>
-              <div className="w-6 h-0.5 bg-text-light"></div>
-            </button>
-
-            {/* Desktop Navigation */}
-            <nav className={`${menuOpen ? 'block' : 'hidden'} lg:flex lg:items-center lg:justify-end lg:w-[68%] absolute lg:relative top-full lg:top-auto left-0 lg:left-auto w-full lg:w-auto bg-header-background lg:bg-transparent z-50 lg:z-auto`}>
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-[12px] md:gap-[24px] p-4 lg:p-0">
-                {/* Navigation Items */}
-                <ul className="flex flex-col lg:flex-row lg:gap-[12px] md:gap-[24px] mb-4 lg:mb-0">
-                  {navigationItems.map((item, index) => (
-                    <li key={index} className="flex justify-center items-center py-2 lg:py-0">
-                      <Link 
-                        href={item.href}
-                        variant="light"
-                        className="text-sm md:text-md font-semibold leading-xl"
-                      >
-                        {item.label}
-                      </Link>
-                      <Image
-                        src="/images/img_arrow_down.svg"
-                        alt="dropdown"
-                        width={10}
-                        height={12}
-                        className="w-[10px] md:w-[14px] h-[12px] md:h-[16px] ml-2"
-                      />
-                    </li>
-                  ))}
-                </ul>
-
-                
-
-                {/* Search and Apply Button */}
-                <div className="flex items-center gap-2 lg:gap-4">
-                
-                  <Button
-                    text="apply now"
-                    className="ml-[7px] md:ml-[14px] px-[12px] md:px-[24px] py-[5px] md:py-[10px]"
-                    style={{ borderRadius: '22px 22px 0px 22px' }}
-                  />
-                </div>
-              </div>
-            </nav>
-          </div>
+          {/* MOBILE MENU BUTTON */}
+          <button
+            className="lg:hidden flex flex-col gap-1"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span className="h-[2px] w-6 bg-black"></span>
+            <span className="h-[2px] w-6 bg-black"></span>
+            <span className="h-[2px] w-6 bg-black"></span>
+          </button>
         </div>
       </div>
-    </header>
-  )
-}
 
-export default Header
+      {/* MOBILE DROPDOWN */}
+      {menuOpen && (
+        <div className="lg:hidden bg-white shadow-md p-6">
+          <ul className="flex flex-col gap-4 mb-4">
+            {navigationItems.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href} className="text-lg font-semibold text-gray-800">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <a href="/admissions" className="w-full">
+            <Button
+              text="Apply Now"
+              className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold"
+            />
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;

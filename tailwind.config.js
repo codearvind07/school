@@ -10,6 +10,12 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Nexa', 'sans-serif'],
+        // Explicitly define font families for headings and body
+        heading: ['Nexa', 'sans-serif'],
+        body: ['Nexa', 'sans-serif'],
+      },
       colors: {
         // Primary Colors
         primary: {

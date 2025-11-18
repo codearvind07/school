@@ -35,14 +35,14 @@ const CourseSection = () => {
       {
         id: '2',
         title: 'Science',
-        image: '/images/science.jpg',
+        image: '/images/Science.jpg',
         icon: FlaskRound,
         color: 'from-green-400 via-green-500 to-green-700'
       },
       {
         id: '3',
         title: 'English',
-        image: '/images/english.jpg',
+        image: '/images/English.jpg',
         icon: PencilRuler,
         color: 'from-yellow-300 via-yellow-400 to-yellow-600'
       },

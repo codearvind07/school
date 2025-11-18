@@ -49,7 +49,7 @@ const CourseSection = () => {
       {
         id: '4',
         title: 'Computer Studies',
-        image: '/images/computer.jpg',
+        image: '/images/Computer.jpg',
         icon: Computer,
         color: 'from-purple-400 via-purple-500 to-purple-700'
       },
@@ -63,7 +63,7 @@ const CourseSection = () => {
       {
         id: '6',
         title: 'Physical Education',
-        image: '/images/physical.jpg',
+        image: '/images/Physical.jpg',
         icon: Volleyball,
         color: 'from-orange-400 via-orange-500 to-orange-700'
       }
@@ -133,6 +133,7 @@ const CourseSection = () => {
                         alt={subj.title}
                         fill
                         className="object-cover"
+                        unoptimized={true}
                       />
                     </motion.div>
 
@@ -215,6 +216,7 @@ const CourseSection = () => {
                         alt={subj.title}
                         fill
                         className="object-cover"
+                        unoptimized={true}
                       />
                     </motion.div>
 

@@ -16,7 +16,7 @@ const teachingPoints = [
     id: 2,
     title: "Activity-Based Teaching",
     description:
-      "Children learn by doing — through experiments, stories, games, role-plays, and hands-on tasks.",
+      "Children learn by doing through experiments, stories, games, role-plays, and hands-on tasks.",
     icon: BookOpenCheck,
     gradient: "from-blue-400 to-blue-600",
   },
@@ -32,7 +32,7 @@ const teachingPoints = [
     id: 4,
     title: "Value-Based Education",
     description:
-      "We teach discipline, hard work, and humanity — shaping responsible, kind, and future-ready individuals.",
+      "We teach discipline, hard work, and humanity shaping responsible, kind, and future-ready individuals.",
     icon: Lightbulb,
     gradient: "from-purple-400 to-purple-600",
   },
@@ -52,7 +52,7 @@ export default function WeTeaches() {
           className="text-center mb-14"
         >
           <h2 className="text-[26px] sm:text-[48px] font-extrabold text-gray-800">
-            How <span className="text-[#f6a532]">We Teach</span>
+            How We Teach  
           </h2>
           <p className="text-[11px] sm:text-[18px] text-gray-600 max-w-[600px] mx-auto mt-3">
             Our modern teaching approach blends creativity, discipline, and joyful learning

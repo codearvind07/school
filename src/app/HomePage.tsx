@@ -12,7 +12,8 @@ const HomePage = () => {
     <div className="flex flex-col justify-start items-start w-full min-h-screen bg-background-white">
       <Header />
       
-      <main className="flex flex-col justify-start items-center w-full flex-1">
+      {/* Added mt-[90px] for mobile to create space for fixed header, sm:mt-0 to reset on larger screens */}
+      <main className="flex flex-col justify-start items-center w-full flex-1 mt-[50px] sm:mt-0">
         <HeroSection />
         <ServiceSection />
         <StatisticsSection />

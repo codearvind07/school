@@ -129,6 +129,9 @@ module.exports = {
         'full': 'var(--radius-full)'
       }
     },
+    transitionTimingFunction: {
+      'custom-ease': 'cubic-bezier(0.76, 0, 0.24, 1)',
+    },
   },
   plugins: []
 };

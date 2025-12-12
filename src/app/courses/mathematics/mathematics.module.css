@@ -1,0 +1,22 @@
+.scrollContainer {
+  animation: scrollLeft var(--scroll-duration, 30s) linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.noScrollbar::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+  display: none;
+}

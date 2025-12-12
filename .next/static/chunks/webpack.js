@@ -192,7 +192,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "3f87901be952a004"; }
+/******/ 		__webpack_require__.h = function() { return "811d21b772f8c031"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -830,7 +830,8 @@
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
 /******/ 			"webpack": 0,
-/******/ 			"css-src_styles_index_css-src_styles_tailwind_css-node_modules_next_font_local_target_css": 0
+/******/ 			"css-src_styles_index_css-src_styles_tailwind_css-node_modules_next_font_local_target_css": 0,
+/******/ 			"css-src_app_courses_mathematics_mathematics_module_css": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = function(chunkId, promises) {
@@ -842,7 +843,7 @@
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(/^(app(\-pages\-internals|\/layout|\/page)|main\-app)$/.test(chunkId)) {
+/******/ 						if(!/^(css\-src_(app_courses_mathematics_mathematics_module|styles_index_css\-src_styles_tailwind_css\-node_modules_next_font_local_target)_css|webpack)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise(function(resolve, reject) { installedChunkData = installedChunks[chunkId] = [resolve, reject]; });
 /******/ 							promises.push(installedChunkData[2] = promise);

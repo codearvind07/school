@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, easeOut } from 'framer-motion';
 
 interface ServiceItem {
@@ -10,9 +11,10 @@ interface ServiceItem {
   description: string;
 }
 
+/* Animation */
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } },
 };
 
 const ServiceSection = () => {
@@ -36,200 +38,168 @@ const ServiceSection = () => {
   }, []);
 
   return (
-    <section className="w-full mt-16 sm:mt-[100px] md:mt-[150px]">
+<section className="w-full mt-2 sm:mt-3 md:mt-4">
+
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0 w-full">
-          {/* LEFT IMAGE COLUMN - Centered and larger on mobile */}
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-16">
+
+          {/* LEFT IMAGES (Layout preserved, premium styling added) */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col lg:flex-row justify-center items-center w-full lg:w-[48%] gap-4 lg:gap-0 px-2 sm:px-[14px] mt-8 lg:mt-0"
+            className="flex flex-row lg:flex-row justify-center items-start w-full lg:w-[48%] gap-3 sm:gap-6 lg:gap-8"
           >
-            <div className="flex flex-col gap-4 sm:gap-[19px] md:gap-[38px] items-center w-full">
-              {/* IMAGE 1 - Larger and centered on mobile */}
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="flex justify-center w-full">
+            {/* LEFT VERTICAL STACK */}
+            <div className="flex flex-col gap-5 items-center">
+
+              {/* MAIN IMAGE */}
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                 <Image
                   src="/images/card1.jpg"
                   alt="Education service"
                   width={226}
                   height={346}
                   className="
-                    w-[140px] sm:w-[113px] md:w-[226px] 
-                    h-[214px] sm:h-[173px] md:h-[346px] 
-                    rounded-[21px] sm:rounded-[21px] md:rounded-[42px] 
-                    object-cover shadow-xl
+                    w-[135px] sm:w-[160px] md:w-[226px]
+                    h-[215px] sm:h-[260px] md:h-[346px]
+                    rounded-3xl object-cover
+                    shadow-xl shadow-orange-200/40
                   "
                 />
               </motion.div>
 
-              {/* ORANGE CARD - Centered on mobile */}
+              {/* ORANGE GRADIENT BLOCK */}
               <motion.div
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.05 }}
                 className="
-                  flex items-center justify-center w-full max-w-[200px] sm:max-w-none
-                  bg-gradient-to-r from-[#fca519] to-[#ffb93a]
-                  rounded-[21px] sm:rounded-[21px] md:rounded-[42px]
-                  p-2 sm:p-[6px] md:p-[12px]
-                  shadow-lg
+                  bg-gradient-to-br from-orange-400 to-yellow-400
+                  rounded-3xl shadow-lg shadow-orange-300/40
+                  flex justify-center items-center
+                  w-[125px] sm:w-[150px] md:w-[200px]
+                  h-[70px] sm:h-[90px] md:h-[120px]
                 "
               >
-                <div className="
-                  w-[45px] sm:w-[39px] md:w-[78px] 
-                  h-[45px] sm:h-[39px] md:h-[78px]
-                  bg-white rounded-[19px] sm:rounded-[19px] md:rounded-[38px]
-                " />
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-inner" />
               </motion.div>
+
             </div>
 
-            {/* RIGHT SMALL IMAGES - Centered and larger on mobile */}
-            <div className="flex flex-col gap-4 sm:gap-[8px] md:gap-[16px] items-center w-full">
-              <motion.div whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} className="flex justify-center w-full">
+            {/* RIGHT IMAGE STACK */}
+            <div className="flex flex-col gap-5 items-center">
+
+              {/* CIRCLE IMAGE — with spin animation */}
+              <motion.div whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }}>
                 <Image
                   src="/images/card2.jpg"
                   alt="Student"
                   width={214}
                   height={214}
                   className="
-                    w-[120px] sm:w-[107px] md:w-[214px]
-                    h-[120px] sm:h-[107px] md:h-[214px]
-                    rounded-full object-cover shadow-lg
+                    w-[115px] sm:w-[150px] md:w-[214px]
+                    h-[115px] sm:h-[150px] md:h-[214px]
+                    rounded-full object-cover
+                    shadow-xl shadow-orange-200/30
+                    animate-spin-slow
                   "
                 />
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="flex justify-center w-full">
+              {/* SECOND IMAGE */}
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                 <Image
                   src="/images/card3.jpg"
                   alt="Learning environment"
                   width={224}
                   height={268}
                   className="
-                    w-[140px] sm:w-[112px] md:w-[224px]
-                    h-[168px] sm:h-[134px] md:h-[268px]
-                    rounded-[21px] sm:rounded-[21px] md:rounded-[42px]
-                    object-cover shadow-xl
+                    w-[135px] sm:w-[170px] md:w-[224px]
+                    h-[160px] sm:h-[210px] md:h-[268px]
+                    rounded-3xl object-cover
+                    shadow-xl shadow-orange-200/40
                   "
                 />
               </motion.div>
+
             </div>
           </motion.div>
 
-          {/* RIGHT CONTENT */}
+          {/* RIGHT CONTENT — EXACT SAME LAYOUT, PREMIUM STYLE */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col justify-start items-start w-full lg:w-[52%] lg:self-end"
+            className="flex flex-col w-full lg:w-[52%]"
           >
             {/* TITLE */}
-            <h2
-              className="
-                text-[21px] sm:text-[26px] md:text-[32px] lg:text-[42px]
-                font-extrabold text-text-primary
-                leading-tight sm:leading-snug lg:leading-tight
-                ml-[13px] sm:ml-[26px]
-              "
-            >
-              Our Education System
+            <h2 className="text-[28px] sm:text-[34px] md:text-[42px] font-extrabold leading-tight text-gray-900">
+              Our Education System  
               <br />
-              <span className="text-[#f4b033] drop-shadow-md">Inspire You More.</span>
+              Inspire You More.
             </h2>
 
-            {/* Description */}
-            <p
-              className="
-                text-[10px] sm:text-[12px] md:text-[16px] lg:text-[18px]
-                opacity-80 leading-relaxed sm:leading-relaxed lg:leading-relaxed
-                text-text-primary font-['Source_Serif_Pro']
-                mt-3 sm:mt-5 ml-[13px] sm:ml-[26px]
-              "
-            >
-              We are a new school built with a strong passion for education.  
-              Our goal is to shape a future where learning is joyful, meaningful,  
-              and full of creativity. We are committed to providing a modern and  
-              inspiring environment where every child grows with confidence.
+            {/* DESCRIPTION */}
+            <p className="text-gray-700 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
+              We are a new school built with passion for education.  
+              Our goal is to provide a modern environment that helps students grow with confidence,
+              curiosity, creativity, and strong values.
             </p>
 
-            <p
-              className="
-                text-[10px] sm:text-[12px] md:text-[16px] lg:text-[18px]
-                opacity-70 leading-relaxed sm:leading-relaxed lg:leading-relaxed
-                text-text-primary font-['Source_Serif_Pro']
-                mt-3 sm:mt-4 ml-[13px] sm:ml-[26px]
-              "
-            >
-              We promote curiosity, confidence, discipline, and global exposure —  
-              helping students become responsible, confident, and values-driven individuals.
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
+              We focus on character, discipline, and global exposure, ensuring students become responsible
+              and future-ready individuals.
             </p>
 
             {/* SERVICES LIST */}
-            <div className="flex flex-col lg:flex-row w-full mt-[17px] sm:mt-[34px] ml-[7px] sm:ml-[14px]">
-              <div className="flex flex-col gap-[10px] sm:gap-[20px] w-full">
-                <div className="flex flex-col gap-[7px] sm:gap-[14px]">
-                  {services.map((service) => (
-                    <motion.div
-                      key={service.id}
-                      whileHover={{ scale: 1.02 }}
-                      className="
-                        flex gap-2 sm:gap-[9px] md:gap-[18px]
-                        p-2 sm:p-4 rounded-xl
-                        hover:bg-gray-50 transition-all
-                      "
-                    >
-                      {/* ICON */}
-                      <div className="
-                        w-[31px] sm:w-[39px] md:w-[78px]
-                        h-[31px] sm:h-[39px] md:h-[78px]
-                        bg-[#f4b033]
-                        rounded-[15px] sm:rounded-[19px] md:rounded-[38px]
-                        shadow-md
-                      " />
-
-                      {/* TEXT */}
-                      <div className="flex flex-col flex-1">
-                        <h3 className="text-[10px] sm:text-[12px] md:text-[16px] lg:text-[20px] font-extrabold text-text-primary">
-                          {service.title}
-                        </h3>
-                        <p className="text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px] opacity-80 text-text-primary">
-                          {service.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* CALL NOW */}
+            <div className="flex flex-col mt-8 gap-5">
+              {services.map((service) => (
                 <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  className="flex mt-3 items-center w-full"
+                  key={service.id}
+                  whileHover={{ scale: 1.02 }}
+                  className="
+                    flex gap-4 p-4 rounded-2xl
+                    bg-white shadow-md border border-gray-100
+                    hover:shadow-xl hover:border-orange-200
+                    transition-all
+                  "
                 >
-                  <div className="
-                    w-[36%] h-[23px] sm:h-[30px] md:h-[46px]
-                    bg-gradient-to-r from-[#fca519] to-[#ffbb40]
-                    rounded-[11px] sm:rounded-[16px] md:rounded-[22px]
-                  " />
+                  <div className="w-14 h-14 bg-orange-400 rounded-2xl shadow-inner" />
 
-                  <div className="flex gap-[6px] sm:gap-[8px] md:gap-[12px] items-center flex-1 px-[13px] sm:px-[20px] md:px-[26px]">
-                    <div className="
-                      w-[23px] sm:w-[30px] md:w-[46px] 
-                      h-[23px] sm:h-[30px] md:h-[46px]
-                      bg-secondary-background 
-                      rounded-[11px] sm:rounded-[15px] md:rounded-[22px]
-                    " />
-
-                    <div>
-                      <span className="text-[7px] sm:text-[9px] md:text-[12px] lg:text-[15px] font-extrabold">CALL NOW</span>
-                      <br />
-                      <span className="text-[7px] sm:text-[9px] md:text-[12px] lg:text-[15px] font-extrabold">8173055035</span>
-                    </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-800">{service.title}</h3>
+                    <p className="text-sm text-gray-600">{service.description}</p>
                   </div>
                 </motion.div>
-              </div>
+              ))}
             </div>
+
+            {/* CALL NOW + LEARN MORE */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="flex items-center gap-4 mt-8"
+            >
+              <div className="bg-gradient-to-r from-orange-500 to-yellow-400 text-white px-6 py-3 rounded-xl shadow-lg text-sm font-semibold">
+                CALL NOW: 8173055035
+              </div>
+
+              <Link href="/contact" className="text-orange-600 hover:text-orange-700 font-semibold flex items-center group">
+                Learn More
+                <svg
+                  className="w-4 h-4 ml-2 group-hover:translate-x-1 transition"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </motion.div>
+
           </motion.div>
+
         </div>
       </div>
     </section>

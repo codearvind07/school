@@ -8,7 +8,6 @@ import Footer from "@/components/common/Footer";
 import styles from "./mathematics.module.css";
 
 /* ------------------ Utilities & Small Components ------------------ */
-
 const CountUp: React.FC<{ to: number; duration?: number }> = ({ to, duration = 1200 }) => {
   const [value, setValue] = useState(0);
   useEffect(() => {

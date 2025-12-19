@@ -1,7 +1,6 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admissions/page": "app/admissions/page.js",
   "/page": "app/page.js",
-  "/courses/computer-studies/page": "app/courses/computer-studies/page.js",
-  "/courses/art-and-craft/page": "app/courses/art-and-craft/page.js",
-  "/courses/physical-education/page": "app/courses/physical-education/page.js",
   "/contact/page": "app/contact/page.js"
 }

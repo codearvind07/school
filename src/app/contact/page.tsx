@@ -59,7 +59,7 @@ export default function ContactPage() {
             </span>
 
             <h1 className="mt-2 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-snug sm:leading-tight px-2">
-              Contact Little Wonders
+              Contact <br /> Little Wonders Public School
             </h1>
 
             <p className="mt-3 sm:mt-4 max-w-xl sm:max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 leading-relaxed px-2">
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   </svg>
                 }
                 title="Office Hours"
-                description="Mon–Fri: 8 AM – 4 PM | Sat: 9 AM – 1 PM | Sun: Closed"
+                description="Mon–Sat: 8 AM – 4 PM  | Sun: Closed"
                 color="yellow"
               />
             </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
               </h2>
 
               <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-xl sm:max-w-2xl mx-auto px-4">
-                Come visit our beautiful campus located in Captainganj, Kushinagar.
+                Come visit our beautiful campus located in Bauliya, Captainganj • District Kushinagar, Uttar Pradesh.
               </p>
             </div>
 
@@ -167,7 +167,7 @@ export default function ContactPage() {
               )}
               
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3565.1782136742324!2d83.71597061504308!3d26.647303083216213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3993f7f5f8b5f6b7%3A0x5a5a5a5a5a5a5a5a!2sKaptanganj%2C%20Uttar%20Pradesh%20274301!5e0!3m2!1sen!2sin!4v1629876543210!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3565.1782136742324!2d83.7078019!3d26.9095122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwNTQnMzQuMiJOIDgzwrQyJzI4LjEiRQ!5e0!3m2!1sen!2sin!4v1629876543210!5m2!1sen!2sin"
                 className={`w-full h-full ${isMapLoaded ? 'grayscale hover:grayscale-0' : 'opacity-0'} transition-all duration-500`}
                 loading="lazy"
                 allowFullScreen

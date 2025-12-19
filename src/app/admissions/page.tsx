@@ -1,342 +1,223 @@
-import { Metadata } from 'next';
-import Header from '../../components/common/Header';
-import Footer from '../../components/common/Footer';
+import { Metadata } from "next";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
+import {
+  GraduationCap,
+  FileText,
+  ClipboardCheck,
+  Users,
+  CheckCircle2,
+  User,
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  School,
+  Send,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Apply Now - Little Wonders Public School',
-  description: 'Start your child\'s educational journey with us today. Apply for admission to Little Wonders Public School.',
+  title: "Apply Now - Little Wonders Public School",
+  description:
+    "Apply for admission at Little Wonders Public School. A nurturing environment where young minds grow.",
 };
 
 export default function AdmissionsPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
-      
+
       <main className="flex-grow pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-              Start Your Journey With Us
+        {/* HERO */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium mb-6">
+              <GraduationCap className="w-4 h-4" />
+              Admissions Open
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+              Shape Your Child’s Future
             </h1>
-            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              Begin your child's educational journey with Little Wonders Public School. We're excited to welcome you to our learning community.
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+              Join <span className="font-semibold text-gray-900">Little Wonders Public School</span> —  
+              a place where curiosity, confidence, and character are nurtured.
             </p>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Admission Process */}
+        {/* MAIN CONTENT */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* LEFT */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Admission Process</h2>
-              
+              {/* PROCESS */}
+              <h2 className="text-2xl font-semibold text-gray-900 mb-10 flex items-center gap-3">
+                <ClipboardCheck className="w-6 h-6 text-blue-600" />
+                Admission Process
+              </h2>
+
               <div className="space-y-8">
-                {/* Step 1 */}
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold">
-                      1
+                {[
+                  {
+                    icon: FileText,
+                    title: "Submit Application",
+                    desc: "Complete the admission form with accurate student details.",
+                  },
+                  {
+                    icon: ClipboardCheck,
+                    title: "Document Verification",
+                    desc: "Our admissions team reviews all submitted documents.",
+                  },
+                  {
+                    icon: Users,
+                    title: "Interaction Session",
+                    desc: "A brief interaction may be scheduled for select grades.",
+                  },
+                  {
+                    icon: CheckCircle2,
+                    title: "Admission Confirmation",
+                    desc: "Final decision and next steps are shared via email.",
+                  },
+                ].map((step, i) => (
+                  <div
+                    key={i}
+                    className="flex gap-5 p-6 rounded-2xl bg-white border border-gray-200 hover:shadow-md transition"
+                  >
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600 text-white">
+                      <step.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1 text-gray-600">{step.desc}</p>
                     </div>
                   </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Submit Application</h3>
-                    <p className="mt-2 text-gray-600">
-                      Complete our online application form with your child's details and required documentation.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold">
-                      2
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Documentation Review</h3>
-                    <p className="mt-2 text-gray-600">
-                      Our admissions team will review all submitted documents and contact you for any additional information.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold">
-                      3
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Interaction Session</h3>
-                    <p className="mt-2 text-gray-600">
-                      For certain grades, we may schedule a brief interaction session with the child and parents.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold">
-                      4
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Admission Decision</h3>
-                    <p className="mt-2 text-gray-600">
-                      You will receive an admission decision via email along with next steps for enrollment.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Required Documents */}
-              <div className="mt-12">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Required Documents</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">Completed application form</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">Birth certificate of the child</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">Previous academic records (if applicable)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">Address proof (Aadhar card, utility bill, etc.)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">Passport size photographs (3 copies)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">Transfer certificate (if applicable)</span>
-                  </li>
+              {/* DOCUMENTS */}
+              <div className="mt-14 p-8 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-3">
+                  <FileText className="w-5 h-5 text-blue-600" />
+                  Required Documents
+                </h3>
+
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Completed application form",
+                    "Birth certificate",
+                    "Previous academic records",
+                    "Address proof",
+                    "Passport size photographs",
+                    "Transfer certificate (if applicable)",
+                  ].map((doc, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5" />
+                      <span className="text-gray-700">{doc}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
 
-            {/* Application Form */}
+            {/* FORM */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Application Form</h2>
-              
-              <form className="space-y-6 bg-white rounded-xl shadow-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-10 flex items-center gap-3">
+                <School className="w-6 h-6 text-blue-600" />
+                Application Form
+              </h2>
+
+              <form className="bg-white rounded-3xl border border-gray-200 shadow-sm p-8 space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                      First Name
-                    </label>
-                    <div className="mt-1">
-                      <input
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                        placeholder="Child's first name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                      Last Name
-                    </label>
-                    <div className="mt-1">
-                      <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                        placeholder="Child's last name"
-                      />
-                    </div>
-                  </div>
+                  <Input icon={User} label="First Name" placeholder="Child’s first name" />
+                  <Input icon={User} label="Last Name" placeholder="Child’s last name" />
                 </div>
 
-                <div>
-                  <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
-                    Date of Birth
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="date"
-                      name="dob"
-                      id="dob"
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                    />
-                  </div>
+                <Input icon={Calendar} type="date" label="Date of Birth" />
+                <Select />
+
+                <Input icon={User} label="Parent / Guardian Name" />
+                <Input icon={Mail} type="email" label="Email Address" />
+                <Input icon={Phone} type="tel" label="Phone Number" />
+                <Textarea icon={MapPin} label="Address" rows={3} />
+                <Textarea label="Additional Information" rows={4} />
+
+                <div className="flex items-start gap-3">
+                  <input type="checkbox" className="mt-1 h-4 w-4 rounded border-gray-300" />
+                  <p className="text-sm text-gray-600">
+                    I agree to the terms and privacy policy.
+                  </p>
                 </div>
 
-                <div>
-                  <label htmlFor="grade" className="block text-sm font-medium text-gray-700">
-                    Grade Applying For
-                  </label>
-                  <div className="mt-1">
-                    <select
-                      id="grade"
-                      name="grade"
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                    >
-                      <option value="">Select a grade</option>
-                      <option value="nursery">Nursery</option>
-                      <option value="kg1">KG 1</option>
-                      <option value="kg2">KG 2</option>
-                      <option value="1">Grade 1</option>
-                      <option value="2">Grade 2</option>
-                      <option value="3">Grade 3</option>
-                      <option value="4">Grade 4</option>
-                      <option value="5">Grade 5</option>
-                      <option value="6">Grade 6</option>
-                      <option value="7">Grade 7</option>
-                      <option value="8">Grade 8</option>
-                      <option value="9">Grade 9</option>
-                      <option value="10">Grade 10</option>
-                      <option value="11">Grade 11</option>
-                      <option value="12">Grade 12</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="parentName" className="block text-sm font-medium text-gray-700">
-                    Parent/Guardian Name
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      name="parentName"
-                      id="parentName"
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                      placeholder="Full name"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone Number
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                      placeholder="+91 XXXXXXXXXX"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="address" className="block text-sm font-medium text-gray-700">
-                    Address
-                  </label>
-                  <div className="mt-1">
-                    <textarea
-                      id="address"
-                      name="address"
-                      rows={3}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                      placeholder="Full residential address"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Additional Information
-                  </label>
-                  <div className="mt-1">
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg"
-                      placeholder="Any additional information you'd like to share..."
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <input
-                    id="terms"
-                    name="terms"
-                    type="checkbox"
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
-                    I agree to the terms and conditions and privacy policy
-                  </label>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  >
-                    Submit Application
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-white font-semibold hover:bg-blue-700 transition"
+                >
+                  <Send className="w-4 h-4" />
+                  Submit Application
+                </button>
               </form>
             </div>
           </div>
-
-          {/* Important Dates */}
-          <div className="mt-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Important Admission Dates</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <h3 className="text-xl font-bold text-white">Application Opens</h3>
-                <p className="text-blue-100 mt-2">January 15, 2024</p>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <h3 className="text-xl font-bold text-white">Last Date to Apply</h3>
-                <p className="text-blue-100 mt-2">March 31, 2024</p>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <h3 className="text-xl font-bold text-white">Admission Results</h3>
-                <p className="text-blue-100 mt-2">April 15, 2024</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
       </main>
 
       <Footer />
     </div>
   );
 }
+
+/* ---------------- Components ---------------- */
+
+const Input = ({ icon: Icon, label, type = "text", placeholder = "" }: any) => (
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      {label}
+    </label>
+    <div className="relative">
+      <Icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+      <input
+        type={type}
+        placeholder={placeholder}
+        className="w-full rounded-lg border border-gray-300 pl-10 pr-4 py-3 focus:border-blue-500 focus:ring-blue-500"
+      />
+    </div>
+  </div>
+);
+
+const Textarea = ({ icon: Icon, label, rows }: any) => (
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      {label}
+    </label>
+    <div className="relative">
+      {Icon && (
+        <Icon className="absolute left-3 top-4 w-4 h-4 text-gray-400" />
+      )}
+      <textarea
+        rows={rows}
+        className={`w-full rounded-lg border border-gray-300 ${
+          Icon ? "pl-10" : "pl-4"
+        } pr-4 py-3 focus:border-blue-500 focus:ring-blue-500`}
+      />
+    </div>
+  </div>
+);
+
+const Select = () => (
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Grade Applying For
+    </label>
+    <select className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:ring-blue-500">
+      <option value="">Select grade</option>
+      {["Nursery", "KG 1", "KG 2", ...Array.from({ length: 12 }, (_, i) => `Grade ${i + 1}`)].map(
+        (g) => (
+          <option key={g}>{g}</option>
+        )
+      )}
+    </select>
+  </div>
+);

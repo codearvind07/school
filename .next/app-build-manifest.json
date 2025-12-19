@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/admissions/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/admissions/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,46 +11,20 @@
       "static/css/css-src_styles_index_css-src_styles_tailwind_css-node_modules_next_font_local_target_css.css",
       "static/chunks/app/layout.js"
     ],
-    "/courses/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/courses/page.js"
-    ],
-    "/courses/mathematics/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_app_courses_mathematics_mathematics_module_css.css",
-      "static/chunks/app/courses/mathematics/page.js"
-    ],
-    "/courses/science/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/science/page.js"
-    ],
-    "/courses/english/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/english/page.js"
-    ],
-    "/courses/computer-studies/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/computer-studies/page.js"
-    ],
-    "/courses/art-and-craft/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/art-and-craft/page.js"
-    ],
-    "/courses/physical-education/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/physical-education/page.js"
+      "static/chunks/app/page.js"
     ],
     "/contact/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/contact/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

@@ -38,7 +38,7 @@ const ServiceSection = () => {
   }, []);
 
   return (
-<section className="w-full mt-2 sm:mt-3 md:mt-4">
+    <section className="w-full mt-0 pt-4 sm:pt-8 md:pt-12">
 
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-16">
@@ -133,6 +133,13 @@ const ServiceSection = () => {
             viewport={{ once: true }}
             className="flex flex-col w-full lg:w-[52%]"
           >
+            {/* GREETING */}
+            <div className="mb-4">
+              <span className="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full font-bold tracking-wider uppercase text-[10px] sm:text-xs whitespace-nowrap border border-orange-100">
+                Welcome to Little Wonders Public School
+              </span>
+            </div>
+
             {/* TITLE */}
             <h2 className="text-[28px] sm:text-[34px] md:text-[42px] font-extrabold leading-tight text-gray-900">
               Our Education System  

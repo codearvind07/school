@@ -130,7 +130,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
 
-        <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fedubright9442back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9" />
+        <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2FLittle Wonders Public School9442back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9" />
         <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1" />
       </body>
     </html>

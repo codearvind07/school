@@ -28,7 +28,7 @@ export default function AboutPage() {
 
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-xl">
-              About Little Wonders
+              About Little Wonders <br />Public School
             </h1>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl">

@@ -142,7 +142,7 @@ export default function ContactPage() {
 
          
           {/*            OPTIMIZED MAP SECTION                 */}
-          {/* ================================================= */}
+          
           <div className="mb-16 sm:mb-20 md:mb-24">
             <div className="text-center mb-8 sm:mb-12 md:mb-14">
               <span className="text-blue-600 text-xs sm:text-sm tracking-wider font-semibold">
@@ -179,7 +179,7 @@ export default function ContactPage() {
 
          
           {/*        OPTIMIZED SUPPORT CARDS SECTION           */}
-          {/* ================================================= */}
+          
           <div>
             <div className="text-center mb-8 sm:mb-12 md:mb-14">
               <span className="text-blue-600 text-xs sm:text-sm tracking-wider font-semibold">
@@ -217,7 +217,7 @@ export default function ContactPage() {
             </div>
           </div>
  {/*        OPTIMIZED BANNER SECTION                  */}
-          {/* ================================================= */}
+         
           <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 rounded-xl sm:rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 text-center text-white shadow-lg">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Quick Response Guaranteed</h3>
             <p className="text-blue-100 text-sm sm:text-base">

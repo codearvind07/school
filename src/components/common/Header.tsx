@@ -39,9 +39,9 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 font-sans">
+    <header className="fixed top-0 left-0 z-50 w-full font-sans">
       {/* 🔶 ORANGE TOP BAR */}
-      <div className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm">
+      <div className="w-full text-sm text-white bg-gradient-to-r from-orange-500 to-orange-600">
         <div className="max-w-[1500px] mx-auto px-4 lg:px-6 h-10 flex items-center justify-between">
           {/* LEFT */}
           <div className="flex items-center gap-4 text-xs sm:text-sm">
@@ -57,7 +57,7 @@ const Header = () => {
 
             <a
               href="mailto:info@littlewonderspublicschoolcpj.com"
-              className="hidden sm:flex items-center gap-2 font-medium"
+              className="items-center hidden gap-2 font-medium sm:flex"
             >
               <Mail className="w-4 h-4" />
               info@littlewonderspublicschoolcpj.com
@@ -66,13 +66,13 @@ const Header = () => {
 
           {/* RIGHT */}
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-orange-200 transition">
+            <a href="#" className="transition hover:text-orange-200">
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" className="hover:text-orange-200 transition">
+            <a href="#" className="transition hover:text-orange-200">
               <Twitter className="w-4 h-4" />
             </a>
-            <a href="#" className="hover:text-orange-200 transition">
+            <a href="#" className="transition hover:text-orange-200">
               <Instagram className="w-4 h-4" />
             </a>
           </div>
@@ -93,23 +93,23 @@ const Header = () => {
             {/* MOBILE LOGO */}
             <Link href="/" className="lg:hidden">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.jpeg"
                 alt="Little Wonders Public School"
-                width={180}
-                height={60}
+                width={60}
+                height={20}
                 className="object-contain"
                 priority
               />
             </Link>
 
             {/* DESKTOP NAV */}
-            <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
+            <nav className="items-center justify-center flex-1 hidden gap-8 lg:flex">
               <Link href="/">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.jpeg"
                   alt="Little Wonders Public School"
-                  width={180}
-                  height={60}
+                  width={90}
+                  height={40}
                   className="object-contain"
                   priority
                 />
@@ -166,14 +166,14 @@ const Header = () => {
           menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-white shadow-2xl px-6 py-8 rounded-b-2xl">
+        <div className="px-6 py-8 bg-white shadow-2xl rounded-b-2xl">
           <ul className="flex flex-col gap-4 mb-6">
             {navigationItems.map((item, index) => (
               <li key={index}>
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block py-3 px-4 rounded-xl font-semibold text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition"
+                  className="block px-4 py-3 font-semibold text-gray-800 transition rounded-xl hover:bg-orange-50 hover:text-orange-600"
                 >
                   {item.label}
                 </Link>
@@ -184,7 +184,7 @@ const Header = () => {
           <a href="/admissions" onClick={() => setMenuOpen(false)}>
             <Button
               text="Apply Now"
-              className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold shadow-lg"
+              className="w-full py-4 font-semibold text-white shadow-lg bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl"
             />
           </a>
         </div>

@@ -93,7 +93,7 @@ const Header = () => {
             {/* MOBILE LOGO */}
             <Link href="/" className="lg:hidden">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo1.png"
                 alt="Little Wonders Public School"
                 width={60}
                 height={20}
@@ -106,7 +106,7 @@ const Header = () => {
             <nav className="items-center justify-center flex-1 hidden gap-8 lg:flex">
               <Link href="/">
                 <Image
-                  src="/images/logo.jpeg"
+                  src="/images/logo1.png"
                   alt="Little Wonders Public School"
                   width={90}
                   height={40}

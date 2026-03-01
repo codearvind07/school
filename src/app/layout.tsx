@@ -59,6 +59,9 @@ export const metadata = {
     'Best disciplined school in Captainganj'
   ],
   authors: [{ name: 'Little Wonders Public School' }],
+  icons: {
+    icon: '/images/logo1.png',
+  },
   robots: {
     index: true,
     follow: true,
